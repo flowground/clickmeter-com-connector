@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "guestId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "type": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "datapoint",
+                "group"
+            ]
+        },
+        "requestBody": {
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "Verb": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

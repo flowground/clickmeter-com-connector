@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "conversionId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        }
+    }
+}

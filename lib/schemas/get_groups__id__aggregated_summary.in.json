@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "timeFrame": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "today",
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "last12months",
+                "lastyear",
+                "currentyear",
+                "beginning",
+                "custom"
+            ]
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tp",
+                "tl"
+            ]
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "deleted",
+                "active"
+            ]
+        },
+        "tag": {
+            "required": false,
+            "type": "string"
+        },
+        "favourite": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string"
+        },
+        "sortDirection": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ]
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

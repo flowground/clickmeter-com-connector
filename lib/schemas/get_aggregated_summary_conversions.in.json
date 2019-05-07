@@ -1,0 +1,68 @@
+{
+    "type": "object",
+    "properties": {
+        "timeFrame": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "today",
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "last12months",
+                "lastyear",
+                "currentyear",
+                "beginning",
+                "custom"
+            ]
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "deleted",
+                "active"
+            ]
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string"
+        },
+        "sortDirection": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ]
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

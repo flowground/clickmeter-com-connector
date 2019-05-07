@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "datapoints": {
+            "required": false,
+            "type": "string"
+        },
+        "groups": {
+            "required": false,
+            "type": "string"
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tp",
+                "tl",
+                "dp",
+                "gr"
+            ]
+        }
+    }
+}

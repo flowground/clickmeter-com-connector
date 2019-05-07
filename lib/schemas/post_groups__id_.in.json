@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "creationDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "isPublic": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "preferred": {
+                    "type": "boolean"
+                },
+                "redirectOnly": {
+                    "type": "boolean"
+                },
+                "tags": {
+                    "items": {
+                        "properties": {
+                            "datapoints": {
+                                "items": {
+                                    "format": "int64",
+                                    "type": "integer"
+                                },
+                                "type": "array"
+                            },
+                            "groups": {
+                                "items": {
+                                    "format": "int64",
+                                    "type": "integer"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "writePermited": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

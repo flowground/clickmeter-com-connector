@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tp",
+                "tl"
+            ]
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "deleted",
+                "active",
+                "paused",
+                "spam"
+            ]
+        },
+        "tags": {
+            "required": false,
+            "type": "string"
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        },
+        "onlyFavorites": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string"
+        },
+        "sortDirection": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ]
+        },
+        "createdAfter": {
+            "required": false,
+            "type": "string"
+        },
+        "createdBefore": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

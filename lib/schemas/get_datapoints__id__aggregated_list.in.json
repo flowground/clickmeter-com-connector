@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "timeFrame": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "today",
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "last12months",
+                "lastyear",
+                "currentyear",
+                "beginning",
+                "custom"
+            ]
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        },
+        "groupBy": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "week",
+                "month"
+            ]
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "Entities": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "uri": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

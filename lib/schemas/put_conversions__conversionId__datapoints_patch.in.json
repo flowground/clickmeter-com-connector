@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "conversionId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "ReplaceId": {
+                    "format": "int64",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

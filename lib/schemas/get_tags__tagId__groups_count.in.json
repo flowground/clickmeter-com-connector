@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "tagId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "deleted",
+                "active"
+            ]
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        },
+        "createdAfter": {
+            "required": false,
+            "type": "string"
+        },
+        "createdBefore": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

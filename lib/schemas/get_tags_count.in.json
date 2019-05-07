@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "datapoints": {
+            "required": false,
+            "type": "string"
+        },
+        "groups": {
+            "required": false,
+            "type": "string"
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "tp",
+                "tl",
+                "dp",
+                "gr"
+            ]
+        }
+    }
+}

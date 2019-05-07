@@ -1,0 +1,356 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "List": {
+                    "items": {
+                        "properties": {
+                            "creationDate": {
+                                "description": " (A date in \"YmdHis\" format)",
+                                "example": "20120203120530",
+                                "type": "string"
+                            },
+                            "encodeIp": {
+                                "type": "boolean"
+                            },
+                            "fifthConversionId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "fifthConversionName": {
+                                "type": "string"
+                            },
+                            "firstConversionId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "firstConversionName": {
+                                "type": "string"
+                            },
+                            "fourthConversionId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "fourthConversionName": {
+                                "type": "string"
+                            },
+                            "groupId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "isPublic": {
+                                "type": "boolean"
+                            },
+                            "isSecured": {
+                                "type": "boolean"
+                            },
+                            "lightTracking": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "string"
+                            },
+                            "preferred": {
+                                "type": "boolean"
+                            },
+                            "redirectOnly": {
+                                "type": "boolean"
+                            },
+                            "secondConversionId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "secondConversionName": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "enum": [
+                                    "Active",
+                                    "Paused",
+                                    "Abuse",
+                                    "Deleted"
+                                ],
+                                "type": "string"
+                            },
+                            "tags": {
+                                "items": {
+                                    "properties": {
+                                        "datapoints": {
+                                            "items": {
+                                                "format": "int64",
+                                                "type": "integer"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "groups": {
+                                            "items": {
+                                                "format": "int64",
+                                                "type": "integer"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "id": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "thirdConversionId": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "thirdConversionName": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "trackingCode": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "enum": [
+                                    "TrackingLink",
+                                    "TrackingPixel"
+                                ],
+                                "type": "string"
+                            },
+                            "typeTL": {
+                                "properties": {
+                                    "appendQuery": {
+                                        "type": "boolean"
+                                    },
+                                    "browserDestinationItem": {
+                                        "properties": {
+                                            "emailDestinationUrl": {
+                                                "type": "string"
+                                            },
+                                            "mobileDestinationUrl": {
+                                                "type": "string"
+                                            },
+                                            "spidersDestinationUrl": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "destinationMode": {
+                                        "enum": [
+                                            "Simple",
+                                            "RandomDestination",
+                                            "DestinationByLanguage",
+                                            "SpilloverDestination",
+                                            "DynamicUrl",
+                                            "BrowserDestination",
+                                            "DestinationByNation",
+                                            "UniqueDestination",
+                                            "SequentialDestination",
+                                            "WeightedDestination"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "domainId": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "encodeUrl": {
+                                        "type": "boolean"
+                                    },
+                                    "expirationClicks": {
+                                        "format": "int64",
+                                        "type": "integer"
+                                    },
+                                    "expirationDate": {
+                                        "description": " (A date in \"YmdHis\" format)",
+                                        "example": "20120203120530",
+                                        "type": "string"
+                                    },
+                                    "firstUrl": {
+                                        "type": "string"
+                                    },
+                                    "goDomainId": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "hideUrl": {
+                                        "type": "boolean"
+                                    },
+                                    "hideUrlTitle": {
+                                        "type": "string"
+                                    },
+                                    "isABTest": {
+                                        "type": "boolean"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "pauseAfterClicksExpiration": {
+                                        "type": "boolean"
+                                    },
+                                    "pauseAfterDateExpiration": {
+                                        "type": "boolean"
+                                    },
+                                    "randomDestinationItems": {
+                                        "items": {
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "redirectType": {
+                                        "enum": [
+                                            "PermanentRedirect",
+                                            "TemporaryRedirect"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "referrerClean": {
+                                        "enum": [
+                                            "None",
+                                            "Clean",
+                                            "Myself"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "scripts": {
+                                        "items": {
+                                            "properties": {
+                                                "id": {
+                                                    "format": "int64",
+                                                    "type": "integer"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "sequentialDestinationItems": {
+                                        "items": {
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "spilloverDestinationItems": {
+                                        "items": {
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "uniqueDestinationItem": {
+                                        "properties": {
+                                            "firstDestinationUrl": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    },
+                                    "urlAfterClicksExpiration": {
+                                        "type": "string"
+                                    },
+                                    "urlAfterDateExpiration": {
+                                        "type": "string"
+                                    },
+                                    "urlsByLanguage": {
+                                        "items": {
+                                            "properties": {
+                                                "languageCode": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "urlsByNation": {
+                                        "items": {
+                                            "properties": {
+                                                "nation": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "weightedDestinationItems": {
+                                        "items": {
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                },
+                                                "weight": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "typeTP": {
+                                "properties": {
+                                    "parameterNote": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "writePermited": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

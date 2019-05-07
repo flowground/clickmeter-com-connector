@@ -1,0 +1,2138 @@
+{
+    "title": "ClickMeter",
+    "description": "Api dashboard for ClickMeter API",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/clickmeter.com/v2/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://apiv2.clickmeter.com:80/",
+                    "https://apiv2.clickmeter.com:80/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "X-Clickmeter-AuthKey (api_key)",
+                "viewClass": "TextFieldView",
+                "note": "API Key Authentication"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_account": {
+            "main": "./lib/actions/get_account.js",
+            "title": "Retrieve current account data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account": {
+            "main": "./lib/actions/post_account.js",
+            "title": "Update current account data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_domainwhitelist": {
+            "main": "./lib/actions/get_account_domainwhitelist.js",
+            "title": "Retrieve list of a domains allowed to redirect in DDU mode",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_domainwhitelist.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account_domainwhitelist": {
+            "main": "./lib/actions/post_account_domainwhitelist.js",
+            "title": "Create an domain entry",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account_domainwhitelist.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_account_domainwhitelist__whitelistId_": {
+            "main": "./lib/actions/delete_account_domainwhitelist__whitelistId_.js",
+            "title": "Delete an domain entry",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_account_domainwhitelist__whitelistId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_guests": {
+            "main": "./lib/actions/get_account_guests.js",
+            "title": "Retrieve list of a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_guests.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account_guests": {
+            "main": "./lib/actions/post_account_guests.js",
+            "title": "Create a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account_guests.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_guests_count": {
+            "main": "./lib/actions/get_account_guests_count.js",
+            "title": "Retrieve count of guests",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_guests_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_account_guests__guestId_": {
+            "main": "./lib/actions/delete_account_guests__guestId_.js",
+            "title": "Delete a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_account_guests__guestId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_guests__guestId_": {
+            "main": "./lib/actions/get_account_guests__guestId_.js",
+            "title": "Retrieve a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_guests__guestId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account_guests__guestId_": {
+            "main": "./lib/actions/post_account_guests__guestId_.js",
+            "title": "Update a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account_guests__guestId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_guests__guestId__permissions": {
+            "main": "./lib/actions/get_account_guests__guestId__permissions.js",
+            "title": "Retrieve permissions for a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_guests__guestId__permissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_guests__guestId__permissions_count": {
+            "main": "./lib/actions/get_account_guests__guestId__permissions_count.js",
+            "title": "Retrieve count of the permissions for a guest",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_guests__guestId__permissions_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account_guests__guestId___type__permissions_patch": {
+            "main": "./lib/actions/post_account_guests__guestId___type__permissions_patch.js",
+            "title": "Change the permission on a shared object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account_guests__guestId___type__permissions_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_account_guests__guestId___type__permissions_patch": {
+            "main": "./lib/actions/put_account_guests__guestId___type__permissions_patch.js",
+            "title": "Change the permission on a shared object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_account_guests__guestId___type__permissions_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_ipblacklist": {
+            "main": "./lib/actions/get_account_ipblacklist.js",
+            "title": "Retrieve list of a ip to exclude from event tracking",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_ipblacklist.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_account_ipblacklist": {
+            "main": "./lib/actions/post_account_ipblacklist.js",
+            "title": "Create an ip blacklist entry",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_account_ipblacklist.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_account_ipblacklist__blacklistId_": {
+            "main": "./lib/actions/delete_account_ipblacklist__blacklistId_.js",
+            "title": "Delete an ip blacklist entry",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_account_ipblacklist__blacklistId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_account_plan": {
+            "main": "./lib/actions/get_account_plan.js",
+            "title": "Retrieve current account plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_account_plan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_aggregated": {
+            "main": "./lib/actions/get_aggregated.js",
+            "title": "Retrieve statistics about this customer for a timeframe",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_aggregated_list": {
+            "main": "./lib/actions/get_aggregated_list.js",
+            "title": "Retrieve statistics about this customer for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_aggregated_summary_conversions": {
+            "main": "./lib/actions/get_aggregated_summary_conversions.js",
+            "title": "Retrieve statistics about a subset of conversions for a timeframe with conversions data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_aggregated_summary_conversions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_aggregated_summary_datapoints": {
+            "main": "./lib/actions/get_aggregated_summary_datapoints.js",
+            "title": "Retrieve statistics about a subset of datapoints for a timeframe with datapoints data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_aggregated_summary_datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_aggregated_summary_groups": {
+            "main": "./lib/actions/get_aggregated_summary_groups.js",
+            "title": "Retrieve statistics about a subset of groups for a timeframe with groups data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_aggregated_summary_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_clickstream": {
+            "main": "./lib/actions/get_clickstream.js",
+            "title": "Retrieve the latest list of events of this account. Limited to last 100.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_clickstream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions": {
+            "main": "./lib/actions/get_conversions.js",
+            "title": "Retrieve a list of conversions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_conversions": {
+            "main": "./lib/actions/post_conversions.js",
+            "title": "Create a conversion",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_conversions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions_aggregated_list": {
+            "main": "./lib/actions/get_conversions_aggregated_list.js",
+            "title": "Retrieve statistics about this customer for a timeframe related to a subset of conversions grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions_aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions_count": {
+            "main": "./lib/actions/get_conversions_count.js",
+            "title": "Retrieve a count of conversions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_conversions__conversionId_": {
+            "main": "./lib/actions/delete_conversions__conversionId_.js",
+            "title": "Delete conversion specified by id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_conversions__conversionId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId_": {
+            "main": "./lib/actions/get_conversions__conversionId_.js",
+            "title": "Retrieve conversion specified by id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_conversions__conversionId_": {
+            "main": "./lib/actions/post_conversions__conversionId_.js",
+            "title": "Update conversion specified by id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_conversions__conversionId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__aggregated": {
+            "main": "./lib/actions/get_conversions__conversionId__aggregated.js",
+            "title": "Retrieve statistics about this conversion for a timeframe",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__aggregated_list": {
+            "main": "./lib/actions/get_conversions__conversionId__aggregated_list.js",
+            "title": "Retrieve statistics about this conversion for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__datapoints": {
+            "main": "./lib/actions/get_conversions__conversionId__datapoints.js",
+            "title": "Retrieve a list of datapoints connected to this conversion",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_conversions__conversionId__datapoints_batch_patch": {
+            "main": "./lib/actions/put_conversions__conversionId__datapoints_batch_patch.js",
+            "title": "Modify the association between a conversion and multiple datapoints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_conversions__conversionId__datapoints_batch_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__datapoints_count": {
+            "main": "./lib/actions/get_conversions__conversionId__datapoints_count.js",
+            "title": "Retrieve a count of datapoints connected to this conversion",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__datapoints_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_conversions__conversionId__datapoints_patch": {
+            "main": "./lib/actions/put_conversions__conversionId__datapoints_patch.js",
+            "title": "Modify the association between a conversion and a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_conversions__conversionId__datapoints_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__hits": {
+            "main": "./lib/actions/get_conversions__conversionId__hits.js",
+            "title": "Retrieve the list of events related to this conversion.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__hits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_conversions__conversionId__notes": {
+            "main": "./lib/actions/put_conversions__conversionId__notes.js",
+            "title": "Fast patch the \"notes\" field of a conversion",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_conversions__conversionId__notes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_conversions__conversionId__reports": {
+            "main": "./lib/actions/get_conversions__conversionId__reports.js",
+            "title": "Retrieve a top report connected to this conversion",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_conversions__conversionId__reports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints": {
+            "main": "./lib/actions/get_datapoints.js",
+            "title": "List of all the datapoints associated to the user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_datapoints": {
+            "main": "./lib/actions/post_datapoints.js",
+            "title": "Create a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints_aggregated": {
+            "main": "./lib/actions/get_datapoints_aggregated.js",
+            "title": "Retrieve statistics about this customer for a timeframe by groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints_aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints_aggregated_list": {
+            "main": "./lib/actions/get_datapoints_aggregated_list.js",
+            "title": "Retrieve statistics about all datapoints of this customer for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints_aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_datapoints_batch": {
+            "main": "./lib/actions/delete_datapoints_batch.js",
+            "title": "Delete multiple datapoints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_datapoints_batch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_datapoints_batch": {
+            "main": "./lib/actions/post_datapoints_batch.js",
+            "title": "Update multiple datapoints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_datapoints_batch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_datapoints_batch": {
+            "main": "./lib/actions/put_datapoints_batch.js",
+            "title": "Create multiple datapoints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_datapoints_batch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints_count": {
+            "main": "./lib/actions/get_datapoints_count.js",
+            "title": "Count the datapoints associated to the user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_datapoints__id_": {
+            "main": "./lib/actions/delete_datapoints__id_.js",
+            "title": "Delete a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_datapoints__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints__id_": {
+            "main": "./lib/actions/get_datapoints__id_.js",
+            "title": "Get a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_datapoints__id_": {
+            "main": "./lib/actions/post_datapoints__id_.js",
+            "title": "Update a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_datapoints__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints__id__aggregated": {
+            "main": "./lib/actions/get_datapoints__id__aggregated.js",
+            "title": "Retrieve statistics about this datapoint for a timeframe",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints__id__aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints__id__aggregated_list": {
+            "main": "./lib/actions/get_datapoints__id__aggregated_list.js",
+            "title": "Retrieve statistics about this datapoint for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints__id__aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_datapoints__id__favourite": {
+            "main": "./lib/actions/put_datapoints__id__favourite.js",
+            "title": "Fast switch the \"favourite\" field of a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_datapoints__id__favourite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints__id__hits": {
+            "main": "./lib/actions/get_datapoints__id__hits.js",
+            "title": "Retrieve the list of events related to this datapoint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints__id__hits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_datapoints__id__notes": {
+            "main": "./lib/actions/put_datapoints__id__notes.js",
+            "title": "Fast patch the \"notes\" field of a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_datapoints__id__notes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_datapoints__id__reports": {
+            "main": "./lib/actions/get_datapoints__id__reports.js",
+            "title": "Retrieve a top report connected to this datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_datapoints__id__reports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_domains": {
+            "main": "./lib/actions/get_domains.js",
+            "title": "Retrieve a list of domains",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_domains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_domains": {
+            "main": "./lib/actions/post_domains.js",
+            "title": "Create a domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_domains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_domains_count": {
+            "main": "./lib/actions/get_domains_count.js",
+            "title": "Retrieve count of domains",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_domains_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_domains__id_": {
+            "main": "./lib/actions/delete_domains__id_.js",
+            "title": "Delete a domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_domains__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_domains__id_": {
+            "main": "./lib/actions/get_domains__id_.js",
+            "title": "Get a domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_domains__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_domains__id_": {
+            "main": "./lib/actions/post_domains__id_.js",
+            "title": "Update a domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_domains__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups": {
+            "main": "./lib/actions/get_groups.js",
+            "title": "List of all the groups associated to the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_groups": {
+            "main": "./lib/actions/post_groups.js",
+            "title": "Create a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups_aggregated": {
+            "main": "./lib/actions/get_groups_aggregated.js",
+            "title": "Retrieve statistics about this customer for a timeframe by groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups_aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups_aggregated_list": {
+            "main": "./lib/actions/get_groups_aggregated_list.js",
+            "title": "Retrieve statistics about all groups of this customer for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups_aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups_count": {
+            "main": "./lib/actions/get_groups_count.js",
+            "title": "Count the groups associated to the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_groups__id_": {
+            "main": "./lib/actions/delete_groups__id_.js",
+            "title": "Delete group specified by id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_groups__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id_": {
+            "main": "./lib/actions/get_groups__id_.js",
+            "title": "Get a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_groups__id_": {
+            "main": "./lib/actions/post_groups__id_.js",
+            "title": "Update a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_groups__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__aggregated": {
+            "main": "./lib/actions/get_groups__id__aggregated.js",
+            "title": "Retrieve statistics about this group for a timeframe",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__aggregated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__aggregated_list": {
+            "main": "./lib/actions/get_groups__id__aggregated_list.js",
+            "title": "Retrieve statistics about this group for a timeframe grouped by some temporal entity (day/week/month)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__aggregated_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__aggregated_summary": {
+            "main": "./lib/actions/get_groups__id__aggregated_summary.js",
+            "title": "Retrieve statistics about a subset of datapoints for a timeframe with datapoints data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__aggregated_summary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__datapoints": {
+            "main": "./lib/actions/get_groups__id__datapoints.js",
+            "title": "List of all the datapoints associated to the user in this group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_groups__id__datapoints": {
+            "main": "./lib/actions/post_groups__id__datapoints.js",
+            "title": "Create a datapoint in this group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_groups__id__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__datapoints_count": {
+            "main": "./lib/actions/get_groups__id__datapoints_count.js",
+            "title": "Count the datapoints associated to the user in this group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__datapoints_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_groups__id__favourite": {
+            "main": "./lib/actions/put_groups__id__favourite.js",
+            "title": "Fast switch the \"favourite\" field of a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_groups__id__favourite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__hits": {
+            "main": "./lib/actions/get_groups__id__hits.js",
+            "title": "Retrieve the list of events related to this group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__hits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_groups__id__notes": {
+            "main": "./lib/actions/put_groups__id__notes.js",
+            "title": "Fast patch the \"notes\" field of a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_groups__id__notes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups__id__reports": {
+            "main": "./lib/actions/get_groups__id__reports.js",
+            "title": "Retrieve a top report connected to this group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups__id__reports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_hits": {
+            "main": "./lib/actions/get_hits.js",
+            "title": "Retrieve the list of events related to this account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_hits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_me": {
+            "main": "./lib/actions/get_me.js",
+            "title": "Retrieve current account data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_me.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_me_plan": {
+            "main": "./lib/actions/get_me_plan.js",
+            "title": "Retrieve current account plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_me_plan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports": {
+            "main": "./lib/actions/get_reports.js",
+            "title": "Retrieve a top report",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_retargeting": {
+            "main": "./lib/actions/get_retargeting.js",
+            "title": "List of all the retargeting scripts associated to the user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_retargeting.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_retargeting": {
+            "main": "./lib/actions/post_retargeting.js",
+            "title": "Creates a retargeting script",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_retargeting.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_retargeting_count": {
+            "main": "./lib/actions/get_retargeting_count.js",
+            "title": "Retrieve count of retargeting scripts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_retargeting_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_retargeting__id_": {
+            "main": "./lib/actions/delete_retargeting__id_.js",
+            "title": "Deletes a retargeting script (and remove associations)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_retargeting__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_retargeting__id_": {
+            "main": "./lib/actions/get_retargeting__id_.js",
+            "title": "Get a retargeting script object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_retargeting__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_retargeting__id_": {
+            "main": "./lib/actions/post_retargeting__id_.js",
+            "title": "Updates a retargeting script",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_retargeting__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_retargeting__id__datapoints": {
+            "main": "./lib/actions/get_retargeting__id__datapoints.js",
+            "title": "List of all the datapoints associated to the retargeting script.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_retargeting__id__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_retargeting__id__datapoints_count": {
+            "main": "./lib/actions/get_retargeting__id__datapoints_count.js",
+            "title": "Count the datapoints associated to the retargeting script.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_retargeting__id__datapoints_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags": {
+            "main": "./lib/actions/get_tags.js",
+            "title": "List of all the groups associated to the user filtered by this tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tags": {
+            "main": "./lib/actions/post_tags.js",
+            "title": "Create a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags_count": {
+            "main": "./lib/actions/get_tags_count.js",
+            "title": "List of all the groups associated to the user filtered by this tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_tags__tagId_": {
+            "main": "./lib/actions/delete_tags__tagId_.js",
+            "title": "Delete a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_tags__tagId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags__tagId_": {
+            "main": "./lib/actions/get_tags__tagId_.js",
+            "title": "Retrieve a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags__tagId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_tags__tagId__datapoints": {
+            "main": "./lib/actions/delete_tags__tagId__datapoints.js",
+            "title": "Delete the association of this tag with all datapoints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_tags__tagId__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags__tagId__datapoints": {
+            "main": "./lib/actions/get_tags__tagId__datapoints.js",
+            "title": "List of all the datapoints associated to the user filtered by this tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags__tagId__datapoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags__tagId__datapoints_count": {
+            "main": "./lib/actions/get_tags__tagId__datapoints_count.js",
+            "title": "Count the datapoints associated to the user filtered by this tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags__tagId__datapoints_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_tags__tagId__datapoints_patch": {
+            "main": "./lib/actions/put_tags__tagId__datapoints_patch.js",
+            "title": "Associate/Deassociate a tag with a datapoint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_tags__tagId__datapoints_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_tags__tagId__groups": {
+            "main": "./lib/actions/delete_tags__tagId__groups.js",
+            "title": "Delete the association of this tag with all groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_tags__tagId__groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags__tagId__groups": {
+            "main": "./lib/actions/get_tags__tagId__groups.js",
+            "title": "List of all the groups associated to the user filtered by this tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags__tagId__groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags__tagId__groups_count": {
+            "main": "./lib/actions/get_tags__tagId__groups_count.js",
+            "title": "Count the groups associated to the user filtered by this tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags__tagId__groups_count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_tags__tagId__groups_patch": {
+            "main": "./lib/actions/put_tags__tagId__groups_patch.js",
+            "title": "Associate/Deassociate a tag with a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_tags__tagId__groups_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_tags__tagId__name": {
+            "main": "./lib/actions/put_tags__tagId__name.js",
+            "title": "Fast patch a tag name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_tags__tagId__name.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

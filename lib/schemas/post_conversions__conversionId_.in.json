@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "conversionId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "protocol": {
+                    "enum": [
+                        "Http",
+                        "Https"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "format": "double",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "guestId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "entityType": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "datapoint",
+                "group"
+            ]
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "r",
+                "w"
+            ]
+        },
+        "entityId": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        }
+    }
+}

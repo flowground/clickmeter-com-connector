@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "system",
+                "go",
+                "personal",
+                "dedicated"
+            ],
+            "default": "system"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "timeFrame": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "today",
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "last12months",
+                "lastyear",
+                "currentyear",
+                "beginning",
+                "custom"
+            ]
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        },
+        "hourly": {
+            "required": false,
+            "type": "boolean"
+        },
+        "onlyFavorites": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

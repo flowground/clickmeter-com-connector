@@ -1,0 +1,168 @@
+{
+    "type": "object",
+    "properties": {
+        "guestId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "apiKey": {
+                    "type": "string"
+                },
+                "conversionOptions": {
+                    "properties": {
+                        "hideComCost": {
+                            "type": "boolean"
+                        },
+                        "hideCost": {
+                            "type": "boolean"
+                        },
+                        "hideCount": {
+                            "type": "boolean"
+                        },
+                        "hideParams": {
+                            "type": "boolean"
+                        },
+                        "hideValue": {
+                            "type": "boolean"
+                        },
+                        "percentCommission": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "percentValue": {
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "creationDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "currentGrant": {
+                    "properties": {
+                        "DatapointType": {
+                            "type": "string"
+                        },
+                        "Entity": {
+                            "properties": {
+                                "id": {
+                                    "format": "int64",
+                                    "type": "integer"
+                                },
+                                "uri": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "EntityName": {
+                            "type": "string"
+                        },
+                        "EntityType": {
+                            "type": "string"
+                        },
+                        "Type": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "dateFormat": {
+                    "type": "string"
+                },
+                "decimalSeparator": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "extendedGrants": {
+                    "properties": {
+                        "allowAllGrants": {
+                            "type": "boolean"
+                        },
+                        "allowGroupCreation": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "groupGrants": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "hitOptions": {
+                    "properties": {
+                        "hideReferrer": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "loginCount": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "numberGroupSeparator": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "timeFormat": {
+                    "enum": [
+                        "AmPm",
+                        "H24"
+                    ],
+                    "type": "string"
+                },
+                "timeZone": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "timeframeMinDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "timezonename": {
+                    "type": "string"
+                },
+                "tlGrants": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "tpGrants": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

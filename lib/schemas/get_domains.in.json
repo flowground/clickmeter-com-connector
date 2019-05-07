@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "system",
+                "go",
+                "personal",
+                "dedicated"
+            ],
+            "default": "system"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

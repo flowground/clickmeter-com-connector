@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "boGoVal": {
+                    "type": "string"
+                },
+                "bonusClicks": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "companyRole": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "redirectOnly": {
+                    "type": "boolean"
+                },
+                "registrationDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "timeframeMinDate": {
+                    "description": " (A date in \"YmdHis\" format)",
+                    "example": "20120203120530",
+                    "type": "string"
+                },
+                "timezone": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "timezonename": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

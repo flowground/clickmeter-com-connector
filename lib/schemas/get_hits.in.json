@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "timeframe": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "custom"
+            ]
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "offset": {
+            "required": false,
+            "type": "string"
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "spiders",
+                "uniques",
+                "nonuniques",
+                "conversions"
+            ]
+        }
+    }
+}

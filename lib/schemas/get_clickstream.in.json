@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "group": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "datapoint": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "conversion": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "pageSize": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+        },
+        "filter": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "",
+                "spiders",
+                "uniques",
+                "nonuniques",
+                "conversions"
+            ]
+        }
+    }
+}

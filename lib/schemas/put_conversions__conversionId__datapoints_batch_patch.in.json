@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "conversionId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "PatchRequests": {
+                    "items": {
+                        "properties": {
+                            "Action": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "format": "int64",
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

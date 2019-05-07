@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "conversionId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "type": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "datapoints",
+                "groups",
+                "browsers",
+                "browsersfamilies",
+                "platforms",
+                "cities",
+                "countries",
+                "keywords",
+                "referrers",
+                "convparameters",
+                "destinations",
+                "languages",
+                "params"
+            ]
+        },
+        "timeframe": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "yesterday",
+                "last7",
+                "last30",
+                "lastmonth",
+                "currentmonth",
+                "previousmonth",
+                "last90",
+                "last120",
+                "last180",
+                "beginning",
+                "custom"
+            ]
+        },
+        "hittype": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "clicks",
+                "views"
+            ]
+        },
+        "fromDay": {
+            "required": false,
+            "type": "string"
+        },
+        "toDay": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

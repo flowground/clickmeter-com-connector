@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "deleted",
+                "active"
+            ]
+        },
+        "tags": {
+            "required": false,
+            "type": "string"
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        },
+        "createdAfter": {
+            "required": false,
+            "type": "string"
+        },
+        "createdBefore": {
+            "required": false,
+            "type": "string"
+        },
+        "write": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

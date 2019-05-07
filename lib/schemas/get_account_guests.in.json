@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string"
+        },
+        "sortDirection": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ]
+        },
+        "textSearch": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
